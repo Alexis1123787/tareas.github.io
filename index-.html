@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Probabilidad y Estadística — UMSNH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <h1>Probabilidad y Estadística</h1>
+        <p class="subtitle">Universidad Michoacana de San Nicolás de Hidalgo</p>
+      </div>
+      <div class="badge-student">
+        <div class="label">Alumno</div>
+        <div class="name">Angel Alexis Gallegos Muñoz</div>
+        <div class="mat">Matrícula: 2337611G</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TAB BAR ── -->
+  <div class="tab-bar">
+    <div class="tab-bar-inner">
+      <div class="tab">Tareas</div>
+    </div>
+  </div>
+
+  <!-- ── MAIN ── -->
+  <div class="main">
+
+    <div class="section-title">Mis tareas</div>
+
+    <!-- Upload zone -->
+    <div class="upload-area" id="uploadArea">
+      <input type="file" id="fileInput" multiple accept="*/*" />
+      <div class="upload-icon">📎</div>
+      <h3>Subir tarea</h3>
+      <p>Arrastra archivos aquí o haz clic para seleccionar</p>
+    </div>
+
+    <!-- Files list -->
+    <div class="files-list" id="filesList">
+      <div class="no-files" id="noFiles">Aún no has subido ninguna tarea.</div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="tool-label">Herramienta interactiva</div>
+    <button class="tool-btn" id="openTool">
+      <span class="tool-icon">📈</span>
+      Ajuste lineal — Mínimos cuadrados
+    </button>
+
+  </div>
+
+  <!-- ── MODAL ── -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>📈 Ajuste lineal — Mínimos cuadrados</h2>
+        <button class="close-btn" id="closeModal">✕</button>
+      </div>
+
+      <div class="input-label">Puntos (x, y)</div>
+      <div id="pairsContainer"></div>
+      <button class="add-btn" id="addPair">+ Agregar punto</button>
+      <button class="calc-btn" id="calcBtn">Calcular ajuste</button>
+
+      <div class="results" id="results" style="display:none">
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="rc-label">Pendiente M</div>
+            <div class="rc-value" id="rSlope">—</div>
+          </div>
+          <div class="result-card">
+            <div class="rc-label">Intercepto B</div>
+            <div class="rc-value" id="rIntercept">—</div>
+          </div>
+          <div class="result-card">
+            <div class="rc-label">R²</div>
+            <div class="rc-value" id="rR2">—</div>
+            <div class="rc-sublabel">R²</div>
+          </div>
+          <div class="result-card">
+            <div class="rc-label">Puntos N</div>
+            <div class="rc-value" id="rN">—</div>
+          </div>
+        </div>
+
+        <div class="equation-box" id="equationBox"></div>
+
+        <div class="chart-legend">
+          <div class="leg-item"><span class="leg-dot"></span> Datos experimentales</div>
+          <div class="leg-item"><span class="leg-line"></span> Recta de ajuste</div>
+        </div>
+
+        <canvas id="chartCanvas" height="280"></canvas>
+
+        <div class="table-wrap">
+          <table id="residualTable">
+            <thead>
+              <tr><th>i</th><th>x</th><th>y</th><th>ŷ</th><th>residuo</th></tr>
+            </thead>
+            <tbody id="residualBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
