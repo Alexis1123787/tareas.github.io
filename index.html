@@ -20,6 +20,7 @@
         <div class="label">Alumno</div>
         <div class="name">Angel Alexis Gallegos Muñoz</div>
         <div class="mat">Matrícula: 2337611G</div>
+        <button id="tokenLogout" style="margin-top:6px; background:none; border:1px solid #444; color:#999; border-radius:6px; padding:3px 8px; font-size:0.65rem; cursor:pointer; font-family:'DM Sans',sans-serif;">🔑 Cambiar token</button>
       </div>
     </div>
   </div>
@@ -111,6 +112,22 @@
           </table>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ── TOKEN OVERLAY ── -->
+  <div class="overlay" id="tokenOverlay">
+    <div class="modal" style="max-width:420px">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-size:2rem; margin-bottom:10px;">🔑</div>
+        <h2 style="font-size:1rem; font-weight:700; margin-bottom:6px;">Acceso requerido</h2>
+        <p style="font-size:0.78rem; color:#666;">Ingresa tu GitHub Personal Access Token para acceder a tus tareas. Se guardará solo en este navegador.</p>
+      </div>
+      <div class="input-label">Token de acceso</div>
+      <input type="password" id="tokenInput" placeholder="ghp_..." style="width:100%; background:#ebebeb; border:1px solid #d4d4d4; border-radius:8px; padding:10px 12px; font-family:'Space Mono',monospace; font-size:0.82rem; outline:none; color:#111; margin-bottom:8px;" />
+      <p id="tokenError" style="display:none; color:#7b2d2d; font-size:0.75rem; margin-bottom:8px;">⚠ Token inválido. Debe empezar con ghp_</p>
+      <button id="tokenSaveBtn" style="width:100%; background:#111; border:none; color:#fff; border-radius:10px; padding:12px; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:700; margin-top:4px;">Guardar y continuar</button>
+      <p style="font-size:0.7rem; color:#999; text-align:center; margin-top:12px;">🔒 El token nunca se sube a GitHub. Solo se guarda en tu dispositivo.</p>
     </div>
   </div>
 
